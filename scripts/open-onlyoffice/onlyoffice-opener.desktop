@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=OnlyOffice Opener
+Comment=Копирование исходного файла во временную директорию для открытия через OnlyOffice
+Exec=/home/skuld/scripts/open-onlyoffice.sh %F
+Icon=onlyoffice-desktopeditors
+Terminal=false
+Categories=Office;
+MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-word;application/msword;application/vnd.oasis.opendocument.text;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel;application/vnd.oasis.opendocument.spreadsheet;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-powerpoint;application/vnd.oasis.opendocument.presentation;

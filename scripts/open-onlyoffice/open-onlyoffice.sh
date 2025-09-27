@@ -23,6 +23,8 @@ fi
 FILENAME=$(basename "$FILE_PATH")
 TARGET_PATH="$TARGET_DIR/$FILENAME"
 
+[ -f "$TARGET_PATH" ] && ! yad --question --text="Файл уже существует. Вы хотите перезаписать его?" --title="Подтверждение" && exit 1
+
 cp "$FILE_PATH" "$TARGET_PATH"
 
 onlyoffice-desktopeditors "$TARGET_PATH" &

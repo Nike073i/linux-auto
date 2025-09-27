@@ -38,6 +38,7 @@ if [ -f "$TARGET_PATH" ]; then
             exit 1
             ;;
     esac
+    cp "$FILE_PATH" "$TARGET_PATH"
 fi
 
 onlyoffice-desktopeditors "$TARGET_PATH" &

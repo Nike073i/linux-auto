@@ -23,8 +23,21 @@ fi
 FILENAME=$(basename "$FILE_PATH")
 TARGET_PATH="$TARGET_DIR/$FILENAME"
 
-[ -f "$TARGET_PATH" ] && ! yad --question --text="Файл уже существует. Вы хотите перезаписать его?" --title="Подтверждение" && exit 1
+if [ -f "$TARGET_PATH" ]; then
+    yad --question \
+           --text="Файл уже существует. Вы хотите перезаписать его?" \
+           --title="Подтверждение" \
+           --button="Перезаписать:0" \
+           --button="Открыть текущий:1";
 
-cp "$FILE_PATH" "$TARGET_PATH"
+    case $? in
+        0)
+            cp "$FILE_PATH" "$TARGET_PATH"
+            ;;
+        252)
+            exit 1
+            ;;
+    esac
+fi
 
 onlyoffice-desktopeditors "$TARGET_PATH" &
